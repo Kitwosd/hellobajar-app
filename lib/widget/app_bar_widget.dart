@@ -32,7 +32,7 @@ class AppBarWidget {
                         padding: EdgeInsets.only(left: 5.0),
                         child: Icon(
                           leadingIcon,
-                          color: ColorConstant.darkBrownColor,
+                          color: ColorConstant.secondaryColor,
                           size: 14,
                         ),
                       ),
@@ -66,7 +66,7 @@ class AppBarWidget {
             ),
           ),
       ],
-      backgroundColor: ColorConstant.darkBrownColor,
+      backgroundColor: ColorConstant.secondaryColor,
       systemOverlayStyle: SystemUiOverlayStyle.light,
     );
   }

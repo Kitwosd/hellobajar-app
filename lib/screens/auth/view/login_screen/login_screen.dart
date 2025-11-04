@@ -98,6 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     SizedBox(height: Get.height * 0.015),
+                    
                     textUtils.textWidget(
                       text: 'Password',
                       color: ColorConstant.darkBrownColor,

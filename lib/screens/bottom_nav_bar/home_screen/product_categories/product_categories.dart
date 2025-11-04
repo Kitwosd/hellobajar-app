@@ -16,6 +16,7 @@ class _ProductCategoriesState extends State<ProductCategories> {
     return Scaffold(
       appBar: AppBarWidget().appBar(
         title: 'Category',
+
         leadingIcon: Icons.arrow_back_ios,
         leadingAction: () {
           Get.toNamed('/bottomNavBar');
