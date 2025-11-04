@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hellobajar/routes/app_routes.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/cart_screen/cart_screen.dart';
 import 'package:hellobajar/screens/start_screen/guest_screen.dart';
 import 'package:hellobajar/screens/auth/view/login_screen/login_screen.dart';
 import 'package:hellobajar/utils/color_utils.dart';
@@ -18,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   /// List of pages for each tab
   final List<Widget> _pages = [
     const GuestScreen(), // Home
-    const LoginScreen(), // Cart
+    const CartScreen(), // Cart
     const LoginScreen(), // Account
   ];
 

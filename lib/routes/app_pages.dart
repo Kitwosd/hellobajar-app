@@ -5,6 +5,7 @@ import 'package:hellobajar/routes/app_routes.dart';
 import 'package:hellobajar/screens/auth/view/login_screen/login_screen.dart';
 import 'package:hellobajar/screens/auth/view/register_screen/register_screen.dart';
 import 'package:hellobajar/screens/bottom_nav_bar/bottom_nav_bar.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/cart_screen/cart_screen.dart';
 import 'package:hellobajar/screens/bottom_nav_bar/home_screen/product_categories/product_categories.dart';
 import 'package:hellobajar/screens/start_screen/guest_screen.dart';
 import 'package:hellobajar/screens/start_screen/splash_screen.dart';
@@ -20,8 +21,12 @@ class AppPages {
     //bottomnavbar
     GetPage(name: AppRoutes.bottomNavBar, page: () => BottomNavBar()),
     GetPage(name: AppRoutes.bottomNavBar, page: () => BottomNavBar()),
-    GetPage(name: AppRoutes.productCategoriesScreen, page: () => ProductCategories()),
+    GetPage(
+      name: AppRoutes.productCategoriesScreen,
+      page: () => ProductCategories(),
+    ),
 
-
+    //cart screen
+    GetPage(name: AppRoutes.cartScreen, page: () => CartScreen()),
   ];
 }

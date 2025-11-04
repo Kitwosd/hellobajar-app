@@ -10,6 +10,8 @@ class AppRoutes {
   static const String bottomNavBar = '/bottomNavBar';
   static const String productCategoriesScreen = '/productCategoriesScreen';
 
+//cartscreen 
+  static const String cartScreen = '/cartScreen';
 
 
 }
