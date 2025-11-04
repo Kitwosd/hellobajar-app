@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hellobajar/constants/constants.dart';
 import 'package:hellobajar/widget/search_bar_widget.dart';
 import 'package:hellobajar/utils/color_utils.dart';
 import 'package:hellobajar/utils/text_utils.dart';
@@ -97,11 +98,11 @@ class _GuestScreenState extends State<GuestScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorConstant.whiteColor,
 
       /// AppBar
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: ColorConstant.whiteColor,
         elevation: 0.5,
         automaticallyImplyLeading: false,
         titleSpacing: 0,
@@ -112,7 +113,7 @@ class _GuestScreenState extends State<GuestScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Image.asset(
-                  'assets/hello_Bajar_Logo.png',
+                  Constants.helloBajarLogo,
                   height: 32,
                   width: 32,
                 ),
@@ -166,7 +167,7 @@ class _GuestScreenState extends State<GuestScreen> {
             ),
 
             /// Dots Indicator
-            SizedBox(height: 8),
+            SizedBox(height: Get.height * 0.01),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children:
@@ -196,7 +197,7 @@ class _GuestScreenState extends State<GuestScreen> {
 
             // Horizontal Categories List
             SizedBox(
-              height: 90, // height for icon + label
+              height: Get.height * 0.14, // height for icon + label
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: [
@@ -234,7 +235,7 @@ class _GuestScreenState extends State<GuestScreen> {
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
@@ -256,7 +257,7 @@ class _GuestScreenState extends State<GuestScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 5),
+                    SizedBox(height: Get.height * 0.0),
                     textUtils.textWidget(
                       text: product['name']!,
                       fontSize: 13,
@@ -273,7 +274,7 @@ class _GuestScreenState extends State<GuestScreen> {
               },
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: Get.height * 0.02),
           ],
         ),
       ),
@@ -282,17 +283,22 @@ class _GuestScreenState extends State<GuestScreen> {
 
   Widget buildCategoryItem(IconData icon, String name) {
     return Padding(
-      padding: const EdgeInsets.only(right: 15.0),
+      padding: EdgeInsets.only(right: 15.0),
       child: Column(
         children: [
-          Container(
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-              color: Colors.grey.shade200,
-              borderRadius: BorderRadius.circular(12),
+          GestureDetector(
+            onTap: () {
+              Get.toNamed('/productCategoriesScreen');
+            },
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: Colors.grey.shade200,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Icon(icon, size: 28, color: ColorConstant.primaryColor),
             ),
-            child: Icon(icon, size: 28, color: ColorConstant.primaryColor),
           ),
           SizedBox(height: 5),
           textUtils.textWidget(

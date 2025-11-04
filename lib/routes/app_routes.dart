@@ -8,6 +8,8 @@ class AppRoutes {
   static const String registerScreen = '/registerScreen';
 
   static const String bottomNavBar = '/bottomNavBar';
+  static const String productCategoriesScreen = '/productCategoriesScreen';
+
 
 
 }

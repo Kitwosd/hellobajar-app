@@ -146,7 +146,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       children: [
                         buttonWidget.textButton(
                           text: 'Forget Password?',
-                          textColor: ColorConstant.tertialryColor,
+                          textColor: ColorConstant.secondaryColor,
                           fontSize: 11.0,
                           align: TextAlign.right,
                           action: () {
@@ -165,24 +165,41 @@ class _LoginScreenState extends State<LoginScreen> {
                       textColor: ColorConstant.whiteColor,
                       borderRadius: 30.0,
                       actionPerform: () async {
-                        // if (_loginFormKey.currentState!.validate()) {
-                        //   var data = {
-                        //     "email": authController.emailController.text,
-                        //     "password": authController.passwordController.text,
-                        //   };
-                        //   var response = await authController
-                        //       .loginWithEmailPassword(data);
-                        //   debugPrint('Res : $response');
-                        //   debugPrint('Res : ${response['message']}');
-                        //   if (response['message'] ==
-                        //       'Your account is not verified. A verification code has been sent to your email.') {
-                        //     Get.offAllNamed('/emailVerifyScreen');
-                        //   } else {
-                        //     if (response['statusCode'] == 200) {
-                        //       Get.offAllNamed('/bottomNavBar');
-                        //     }
-                        //   }
-                        // }
+                        if (_loginFormKey.currentState!.validate()) {
+                          final email =
+                              authController.emailController.text.trim();
+                          final password =
+                              authController.passwordController.text.trim();
+
+                          //  validation
+                          if (email.isEmpty || password.isEmpty) {
+                            Get.snackbar('Error', 'Please fill in all fields');
+                            return;
+                          }
+
+                          if (!GetUtils.isEmail(email)) {
+                            Get.snackbar(
+                              'Invalid Email',
+                              'Please enter a valid email address',
+                            );
+                            return;
+                          }
+
+                          if (password.length < 6) {
+                            Get.snackbar(
+                              'Weak Password',
+                              'Password must be at least 6 characters long',
+                            );
+                            return;
+                          }
+
+                          Get.snackbar(
+                            'Success',
+                            'Validation passed! Redirecting...',
+                          );
+                          await Future.delayed(const Duration(seconds: 1));
+                          Get.offAllNamed('/bottomNavBar');
+                        }
                       },
                     ),
                     // Divider
