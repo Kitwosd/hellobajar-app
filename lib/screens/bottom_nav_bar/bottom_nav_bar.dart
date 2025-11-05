@@ -18,9 +18,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   /// List of pages for each tab
   final List<Widget> _pages = [
-    const GuestScreen(), // Home
-    const CartScreen(), // Cart
-    const LoginScreen(), // Account
+     GuestScreen(), // Home
+     CartScreen(), // Cart
+     LoginScreen(), // Account
   ];
 
   void _onItemTapped(int index) {

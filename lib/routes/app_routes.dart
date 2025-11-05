@@ -10,8 +10,12 @@ class AppRoutes {
   static const String bottomNavBar = '/bottomNavBar';
   static const String productCategoriesScreen = '/productCategoriesScreen';
 
-//cartscreen 
+  //cartscreen
   static const String cartScreen = '/cartScreen';
 
+  static const String proceedToCheckout = '/proceedToCheckout';
 
+  //select payment method
+
+  static const String selectPaymentMethodScreen = '/selectPaymentMethodScreen';
 }
