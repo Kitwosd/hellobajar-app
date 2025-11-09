@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hellobajar/constants/constants.dart';
 import 'package:hellobajar/utils/color_utils.dart';
 import 'package:hellobajar/utils/text_utils.dart';
 import 'package:hellobajar/widget/button_widgets.dart';
@@ -16,6 +15,7 @@ class AppBarWidget {
     String? endText,
     VoidCallback? endTextAction,
     List<Widget>? action,
+    FontWeight? fontWeight,
   }) {
     return AppBar(
       automaticallyImplyLeading: false,

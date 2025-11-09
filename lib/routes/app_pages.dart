@@ -2,39 +2,62 @@
 
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'package:hellobajar/routes/app_routes.dart';
+import 'package:hellobajar/screens/auth/view/forget_password/OTP_screen.dart';
+import 'package:hellobajar/screens/auth/view/forget_password/forget_password.dart';
+import 'package:hellobajar/screens/auth/view/forget_password/reset_password.dart';
 import 'package:hellobajar/screens/auth/view/login_screen/login_screen.dart';
 import 'package:hellobajar/screens/auth/view/register_screen/register_screen.dart';
 import 'package:hellobajar/screens/bottom_nav_bar/bottom_nav_bar.dart';
-import 'package:hellobajar/screens/bottom_nav_bar/cart_screen/cart_screen.dart';
-import 'package:hellobajar/screens/bottom_nav_bar/cart_screen/proceed_to_checkout.dart';
-import 'package:hellobajar/screens/bottom_nav_bar/cart_screen/select_payment_method.dart';
-import 'package:hellobajar/screens/bottom_nav_bar/home_screen/product_categories/product_categories.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/cart_screen/cart_screen.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/cart_screen/proceed_to_checkout.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/cart_screen/select_payment_method.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/home_screen/home_screen.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/home_screen/product_categories/product_categories.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/profile_screen/my_profile.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/profile_screen/profile_screen.dart';
 import 'package:hellobajar/screens/start_screen/guest_screen.dart';
 import 'package:hellobajar/screens/start_screen/splash_screen.dart';
 
 class AppPages {
   static final List<GetPage> routes = [
-    //strat of the app
+    //START SCREEN
     GetPage(name: AppRoutes.splash, page: () => SplashScreen()),
     GetPage(name: AppRoutes.guestScreen, page: () => GuestScreen()),
-    //auth section
+    //AUTH SECTION
     GetPage(name: AppRoutes.loginScreen, page: () => LoginScreen()),
     GetPage(name: AppRoutes.registerScreen, page: () => RegisterScreen()),
-    //bottomnavbar
-    GetPage(name: AppRoutes.bottomNavBar, page: () => BottomNavBar()),
+    //BOTTOM NAV BAR
     GetPage(name: AppRoutes.bottomNavBar, page: () => BottomNavBar()),
     GetPage(
       name: AppRoutes.productCategoriesScreen,
-      page: () => ProductCategories(),
+      page: () => ProductCategoriesScreen(),
     ),
+    //HOME SCREEN
+    GetPage(name: AppRoutes.homeScreen, page: () => HomeScreen()),
 
-    //cart screen
+    //CART SCREEN
     GetPage(name: AppRoutes.cartScreen, page: () => CartScreen()),
     GetPage(name: AppRoutes.proceedToCheckout, page: () => ProceedToCheckout()),
 
-    //select payment method screen
-    GetPage(name: AppRoutes.selectPaymentMethodScreen, page: () => SelectPaymentMethod()),
+    //SELECT PAYMENT METHOD SCREEN
+    GetPage(
+      name: AppRoutes.selectPaymentMethodScreen,
+      page: () => SelectPaymentMethod(),
+    ),
 
+    //FORGET PASSWORD SCREEN
+    GetPage(
+      name: AppRoutes.forgetPasswordScreen,
+      page: () => ForgetPasswordScreen(),
+    ),
 
+    //OTP SCREEN
+    GetPage(name: AppRoutes.OTPScreen, page: () => OtpScreen()),
+
+    //RESET PASSWORD SCREEN
+    GetPage(name: AppRoutes.resetPasswordScreen, page: () => ResetPassword()),
+    GetPage(name: AppRoutes.profileScreen, page: () => ProfileScreen()),
+
+    GetPage(name: AppRoutes.myProfileScreen, page: () => MyProfileScreen()),
   ];
 }

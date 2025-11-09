@@ -37,6 +37,11 @@ dependencies:
   get: ^4.7.2
   infinite_carousel: ^1.1.1
   carousel_slider: ^5.1.1
+  get_storage: ^2.1.1
+  http: ^1.5.0
+  pinput: ^5.0.2
+  flutter_avif: ^3.1.0
+  image_picker: ^1.2.0
 
 dev_dependencies:
   flutter_test:

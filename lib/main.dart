@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:hellobajar/routes/app_pages.dart';
 import 'package:hellobajar/routes/app_routes.dart';
 import 'package:hellobajar/screens/auth/controller/auth_controller.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await GetStorage.init();
   Get.put(AuthController());
   runApp(const MyApp());
 }

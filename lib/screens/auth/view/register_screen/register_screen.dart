@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hellobajar/routes/app_routes.dart';
@@ -51,11 +50,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(height: Get.height * 0.02),
               // Full Name
               TextFormField(
-                controller: authController.fullnameController,
-                decoration: customInputDecoration(hintText: 'Full Name'),
+                controller: authController.firstnameController,
+                decoration: customInputDecoration(hintText: 'First Name'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return 'Please enter your full name';
+                    return 'Please enter your first name';
+                  }
+                  return null;
+                },
+              ),
+              SizedBox(height: Get.height * 0.02),
+              // Full Name
+              TextFormField(
+                controller: authController.lastnameController,
+                decoration: customInputDecoration(hintText: 'Last Name'),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter your last name';
                   }
                   return null;
                 },
@@ -132,27 +143,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(height: Get.height * 0.035),
 
               // Sign Up Button
-              buttonWidget.buttonWidget(
-                borderColor: ColorConstant.secondaryColor,
-                btnColor: ColorConstant.secondaryColor,
-                text: 'Sign Up',
-                textColor: ColorConstant.whiteColor,
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-
-                borderRadius: 30.0,
-                actionPerform: () async {
-                  if (_formKey.currentState!.validate()) {
-                    // Call your signup logic here
-                    Get.snackbar(
-                      'Success',
-                      'Account registered successfully',
-                      backgroundColor: Colors.green,
-                      colorText: Colors.white,
-                      snackPosition: SnackPosition.BOTTOM,
-                    );
-                  }
-                },
+              Obx(
+                () => buttonWidget.buttonWidget(
+                  borderColor: ColorConstant.secondaryColor,
+                  btnColor: ColorConstant.secondaryColor,
+                  text:
+                      authController.isLoading.value
+                          ? 'Please wait...'
+                          : 'Sign Up',
+                  textColor: ColorConstant.whiteColor,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  borderRadius: 30.0,
+                  actionPerform: () async {
+                    if (_formKey.currentState!.validate()) {
+                      await authController.registerUser();
+                    }
+                  },
+                ),
               ),
 
               SizedBox(height: Get.height * 0.025),
