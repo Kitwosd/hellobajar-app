@@ -13,7 +13,9 @@ import 'package:hellobajar/screens/bottom_nav_bar/screens/cart_screen/proceed_to
 import 'package:hellobajar/screens/bottom_nav_bar/screens/cart_screen/select_payment_method.dart';
 import 'package:hellobajar/screens/bottom_nav_bar/screens/home_screen/home_screen.dart';
 import 'package:hellobajar/screens/bottom_nav_bar/screens/home_screen/product_categories/product_categories.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/profile_screen/my_orders/my_orders.dart';
 import 'package:hellobajar/screens/bottom_nav_bar/screens/profile_screen/my_profile.dart';
+import 'package:hellobajar/screens/bottom_nav_bar/screens/profile_screen/profile_page.dart';
 import 'package:hellobajar/screens/bottom_nav_bar/screens/profile_screen/profile_screen.dart';
 import 'package:hellobajar/screens/start_screen/guest_screen.dart';
 import 'package:hellobajar/screens/start_screen/splash_screen.dart';
@@ -59,5 +61,7 @@ class AppPages {
     GetPage(name: AppRoutes.profileScreen, page: () => ProfileScreen()),
 
     GetPage(name: AppRoutes.myProfileScreen, page: () => MyProfileScreen()),
+    GetPage(name: AppRoutes.myorderScreen, page: () => MyorderScreen()),
+    GetPage(name: AppRoutes.profilePage, page: () => ProfilePage()),
   ];
 }

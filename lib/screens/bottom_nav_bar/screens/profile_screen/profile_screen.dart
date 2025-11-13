@@ -112,20 +112,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
           SizedBox(height: 10),
           _buildMenuTile(Icons.shopping_bag_outlined, "My Profile", () {
-            Get.toNamed('/myProfileScreen');
+            Get.toNamed('/profilePage');
           }),
           _buildMenuTile(Icons.shopping_bag_outlined, "My Orders", () {
-            // Get.toNamed('/ordersScreen');
+            Get.toNamed('/myorderScreen');
           }),
-          _buildMenuTile(Icons.location_on_outlined, "My Addresses", () {
-            // Get.toNamed('/addressScreen');
-          }),
-          _buildMenuTile(Icons.favorite_border, "Wishlist", () {
-            // Get.toNamed('/wishlistScreen');
-          }),
-          _buildMenuTile(Icons.settings_outlined, "Settings", () {
-            // Get.toNamed('/settingsScreen');
-          }),
+
           _buildMenuTile(Icons.logout, "Logout", () async {
             await box.erase();
             Get.offAllNamed('/loginScreen');

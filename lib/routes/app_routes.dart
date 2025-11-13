@@ -34,5 +34,7 @@ class AppRoutes {
   static const String profileScreen = '/profileScreen';
 
   static const String myProfileScreen = '/myProfileScreen';
+  static const String myorderScreen = '/myorderScreen';
+  static const String profilePage = '/profilePage';
 
 }
